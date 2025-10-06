@@ -1,0 +1,5 @@
+google-adk
+mcp
+databricks-sql-connector
+lxml
+beautifulsoup4
