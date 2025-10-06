@@ -1,4 +1,4 @@
-# NL2SQL Databricks ADK Agent
+# ADK MCP Agent
 
 This project demonstrates an Agent Development Kit (ADK) agent that interacts with a Databricks. The interaction is facilitated by a Model Context Protocol (MCP) server that exposes tools to query databricks using natural language queries.
 
@@ -9,6 +9,9 @@ adk-agent/
 ├── databricks-agent/
 │   ├── agent.py             # The ADK agent for the databricks
 │   ├── databricks_mcp_server.py            # The MCP server exposing databricks tools
+│   └── __init__.py
+|── google_maos_mcp_agent/
+│   ├── agent.py             # The ADK agent for the Google Map MCP server
 │   └── __init__.py             
 ├── .env                   # For Google PROJECT and Location 
 ├── requirements.txt       # Python dependencies
@@ -57,11 +60,11 @@ pip install -r requirements.txt
 
 The ADK agent in this project uses a Gemini model. You'll need a Gemini API Access to you project.
 
-Set the environment variables. Update an `nl2sql-databricks-adk-agent/adk-agent/databricks-agent/.env` [variable file](https://github.com/nkjaiswa2022/nl2sql-databricks-adk-agent/blob/main/adk-agent/databricks-agent/.env) with PROJECT_ID, REGION, DATABRICKS_ACCESS_TOKEN, DATABRICKS_HOST,DATABRICKS_HTTP_PATH
+Set the environment variables. Update an `adk-mcp-agent/adk-agent/.env` with PROJECT_ID, REGION, DATABRICKS_ACCESS_TOKEN, DATABRICKS_HOST,DATABRICKS_HTTP_PATH
 
 The `databricks_mcp_server.py` and `agent.py` will load these variables.
 
-### 5. Create the databricks Tables and load data
+### 5. Databricks Tables and data
 
 We have pre-loaded the Databricks bakehouse_dataset sales tables into Databricks.
 
