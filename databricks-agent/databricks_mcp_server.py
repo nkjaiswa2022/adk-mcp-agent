@@ -52,7 +52,7 @@ if not all([access_token, host, http_path]):
     logging.critical(error_message)
     raise ValueError(error_message)
 
-async def execute_databricks_query(query:str):
+async def execute_databricks_sql_query(query:str):
     """
     Connects to Databricks and executes a single SQL query.
     
@@ -100,7 +100,7 @@ async def execute_databricks_query(query:str):
 
 # --- Prepare the ADK Tool ---
 print("Initializing ADK load_web_page tool...")
-adk_tool_to_expose = FunctionTool(execute_databricks_query)
+adk_tool_to_expose = FunctionTool(execute_databricks_sql_query)
 print(f"ADK tool '{adk_tool_to_expose.name}' initialized and ready to be exposed via MCP.")
 
 # --- MCP Server Setup ---

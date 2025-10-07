@@ -10,7 +10,7 @@ if PATH_TO_YOUR_MCP_SERVER_SCRIPT == "/path/to/your/my_adk_mcp_server.py":
     print("WARNING: PATH_TO_YOUR_MCP_SERVER_SCRIPT is not set. Please update it in agent.py.")
     # Optionally, raise an error if the path is critical
 PROMPT="""You are a helpful assistant that can answer questions about travel data.
-    You have access to a tool called `execute_databricks_query` which can execute SQL queries against a databricks database.
+    You have access to a tool called `execute_databricks_sql_query` which can execute SQL queries against a databricks database.
 
     The database contains the following tables:
 
@@ -30,7 +30,7 @@ PROMPT="""You are a helpful assistant that can answer questions about travel dat
 **Step 1 **
     When a user asks a question about the data, translate the question into a SQL query using the available tables and columns
 ** step 2  **
-    - invoke mcp server tool execute_databricks_query with query generated in step 1 as parameter.
+    - invoke mcp server tool execute_databricks_sql_query with query generated in step 1 as parameter.
     - output will be list of dictionary , please extract that in the form of a tabular output and return to the user
     -  If you cannot answer the question using a SQL query based on the available tables, respond that you can only answer questions about the bakehouse data
      """
