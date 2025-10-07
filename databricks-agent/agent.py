@@ -39,16 +39,7 @@ root_agent = LlmAgent(
     model='gemini-2.0-flash',
     name='databricks_mcp_client_agent',
     instruction=PROMPT,
-    tools=[
-        McpToolset(
-            connection_params=StdioConnectionParams(
-                server_params = StdioServerParameters(
-                    command='python3', # Command to run your MCP server script
-                    args=[PATH_TO_YOUR_MCP_SERVER_SCRIPT], # Argument is the path to the script
-                ),
-                timeout=60,
-            )
-            
-        )
-    ],
+    
+    ## Add the MCPToolset below:
+    
 )
